@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+         *{
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body{
+            background-color: #EDEADE;
+        
+        }
+        h2{
+            border: 2px solid black;
+            width: 700px;
+            border-radius: 20px;
+        }
+        h2:hover {
+            border-color: rgb(12, 75, 96);
+            background-color: lightblue;
+           
+        }
+        #nav{
+          
+         
+          background-color: black;
+          height:50px;
+      }
+      #nav a{
+          color: white;
+          text-decoration: none;
+          margin: 20%;
+      }
+      #nav a:hover {
+          border-bottom: 2px solid;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+        </div>
+        <h1>Result</h1>
+        <h2 id="msg"></h2>
+       
+    </center>
+
+    <script>
+        
+        let msg=document.getElementById("msg");
+        let res=localStorage.getItem("res");
+        if(res==null)
+        {
+            msg.innerHTML="You're Trying To Tresspass";
+            function goback()
+            {
+                window.location.href="index.html";
+            }
+            setTimeout(goback,5000);
+        }
+        else {
+            msg.innerHTML="Square is "+parseFloat(res).toFixed(2);
+        }
+    </script>
+</body>
+</html>

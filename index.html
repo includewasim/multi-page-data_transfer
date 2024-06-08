@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Square</title>
+    <style>
+                *{
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body{
+            background-color: #EDEADE;
+        
+        }
+        #nav{
+          
+         
+          background-color: black;
+          height:50px;
+      }
+      #nav a{
+          color: white;
+          text-decoration: none;
+          margin: 20%;
+      }
+      #nav a:hover {
+          border-bottom: 2px solid;
+      }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div id="nav">
+            <a href="#">Home</a>
+            <a href="aboutUs.html">About Us</a>
+        </div>
+        <h1>Find Square Of A Number</h1>
+        <form onsubmit="compute()">
+            <label for="num">Number: </label>
+            <input type="number" step="any" placeholder="Enter Number" id="num">
+            <br><br>
+            <input type="submit" value="Compute">
+        </form>
+       
+    </center>
+    <script>
+        function compute()
+        {
+            event.preventDefault();
+            let num=document.getElementById("num");
+            let msg=document.getElementById("msg");
+            if(num.value=="")
+            {
+                alert("You didn't enter number");
+                num.focus();
+                return;
+
+            }
+            let n=parseFloat(num.value);
+            let r=n*n;
+
+            localStorage.setItem("res",r);
+            window.location.href="result.html";
+        
+            
+        }
+    </script>
+</body>
+</html>
